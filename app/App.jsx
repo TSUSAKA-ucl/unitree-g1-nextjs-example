@@ -15,8 +15,10 @@ import './fingerCloser.js';
 
 function App() {
   const deg90 = Math.PI/2;
+  const deg80 = 80.0/180*Math.PI;
   const deg45 = Math.PI/4;
   const deg22 = Math.PI/8;
+  const deg10 = 10.0/180*Math.PI;
   return (
     <a-scene xr-mode-ui="XRMode: xr" >
       <a-entity camera position="-0.5 1.2 1.2"
@@ -26,7 +28,7 @@ function App() {
                 robot-registry >
         <a-entity right-controller
                   laser-controls="hand: right"
-                  thumbstick-menu="items: ray; laser: false"
+                  thumbstick-menu="items: g1r-unitree-r-arm,ur5e,g1l-unitree-l-arm,ray; laser: false"
                   target-selector="id: g1r-unitree-r-arm"
                   event-distributor
                   visible="false">
@@ -34,7 +36,7 @@ function App() {
         </a-entity>
         <a-entity left-controller
                   laser-controls="hand: left"
-                  thumbstick-menu="items: ray; laser: false"
+                  thumbstick-menu="items: g1r-unitree-r-arm,ur5e,g1l-unitree-l-arm,ray; laser: false"
                   target-selector="id: g1l-unitree-l-arm"
                   event-distributor
                   visible="false">
@@ -46,9 +48,11 @@ function App() {
                width="0.04" height="0.04" color="blue"
                robot-loader="model: ur5e"
                ik-worker={`0, ${-deg90}, ${deg90}, 0, ${deg90}, 0`}
+               exact_solution="exact: false"
                reflect-worker-joints
                arm-motion-ui
                base-mover="velocityMax: 0.2; angularVelocityMax: 0.5"
+               joint-desirable={`gain: 2:10; upper: 1:0,2:${deg80},3:0; lower: 1:${deg10},2:${deg10},3:0;`}
       />
       <a-plane id="unitree-g1-torso"
                position="1.0 0.2 -0.5" rotation="-90 0 110"
@@ -60,6 +64,7 @@ function App() {
                  material="opacity: 0.5; transparent: true; side: double;"
                  robot-loader="model: g1-right"
                  ik-worker={`${0}, ${0}, ${0}, ${0}, ${0}, 0, 0`}
+                 exact_solution_slrm="exact: false"
                  reflect-worker-joints
                  reflect-collision="color: yellow"
                  attach-event-broadcaster
@@ -93,7 +98,8 @@ function App() {
                  material="opacity: 0.5; transparent: true; side: double;"
                  robot-loader="model: g1-left"
                  ik-worker={`${-deg22}, ${deg45}, ${0}, ${0}, ${0}, 0, 0`}
-                 joint-desirable="gain: 0:200,1:200; upper: 0:-0.382,1:0.785; lower: 0:-0.382,1:0.785;"
+                 exact_solution="exact: false"
+                 joint-desirable="gain: 0:20,1:20,3:40; upper: 0:-0.382,1:0.785,3:1.396; lower: 0:-0.382,1:0.785,3:0.0;"
                  reflect-worker-joints
                  reflect-collision="color: yellow"
                  attach-event-broadcaster
