@@ -4,12 +4,14 @@ import 'aframe';
 import '@ucl-nuee/robot-loader/robotRegistry.js';
 import '@ucl-nuee/robot-loader/robotLoader.js';
 import '@ucl-nuee/robot-loader/ikWorker.js';
+import '@ucl-nuee/robot-loader/jointMoveTo.js';
 import '@ucl-nuee/robot-loader/reflectWorkerJoints.js';
+import '@ucl-nuee/robot-loader/reflectJointLimits.js';
+import '@ucl-nuee/robot-loader/reflectCollision.js';
 import '@ucl-nuee/robot-loader/armMotionUI.js';
 import '@ucl-nuee/robot-loader/vrControllerThumbMenu.js';
 import '@ucl-nuee/robot-loader/axesFrame.js';
 import '@ucl-nuee/robot-loader/attachToAnother.js';
-import '@ucl-nuee/robot-loader/reflectCollision.js';
 import '@ucl-nuee/robot-loader/baseMover.js';
 import './fingerCloser.js';
 
@@ -53,6 +55,7 @@ function App() {
                arm-motion-ui
                base-mover="velocityMax: 0.2; angularVelocityMax: 0.5"
                joint-desirable={`gain: 2:10; upper: 1:0,2:${deg80},3:0; lower: 1:${deg10},2:${deg10},3:0;`}
+               joint-desirable-vlimit="all: 0.5"
       />
       <a-plane id="unitree-g1-torso"
                position="1.0 0.2 -0.5" rotation="-90 0 110"
@@ -64,9 +67,13 @@ function App() {
                  material="opacity: 0.5; transparent: true; side: double;"
                  robot-loader="model: g1-right"
                  ik-worker={`${0}, ${0}, ${0}, ${0}, ${0}, 0, 0`}
+                 joint-move-to={`${-deg90}, ${0}, ${0}, ${0}, ${0}, 0, 0`}
                  exact_solution_slrm="exact: false"
+                 joint-desirable="gain: 0:20,1:20,3:40; upper: 0:0.382,1:-0.785,3:1.396; lower: 0:0.382,1:-0.785,3:0.0;"
+                 joint-desirable-vlimit="all: 2.0"
                  reflect-worker-joints
                  reflect-collision="color: yellow"
+                 reflect-joint-limits
                  attach-event-broadcaster
                  arm-motion-ui
         >
@@ -98,10 +105,13 @@ function App() {
                  material="opacity: 0.5; transparent: true; side: double;"
                  robot-loader="model: g1-left"
                  ik-worker={`${-deg22}, ${deg45}, ${0}, ${0}, ${0}, 0, 0`}
+                 joint-move-to={`${0}, ${-deg22}, ${0}, ${0}, ${0}, 0, 0`}
                  exact_solution="exact: false"
                  joint-desirable="gain: 0:20,1:20,3:40; upper: 0:-0.382,1:0.785,3:1.396; lower: 0:-0.382,1:0.785,3:0.0;"
+                 joint-desirable-vlimit="all: 2.0"
                  reflect-worker-joints
                  reflect-collision="color: yellow"
+                 reflect-joint-limits
                  attach-event-broadcaster
                  arm-motion-ui
         >
