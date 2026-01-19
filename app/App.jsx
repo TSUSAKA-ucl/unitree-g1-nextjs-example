@@ -66,8 +66,8 @@ function App() {
                  width="0.1" height="0.1" color="green"
                  material="opacity: 0.5; transparent: true; side: double;"
                  robot-loader="model: g1-right"
-                 ik-worker={`${0}, ${0}, ${0}, ${0}, ${0}, 0, 0`}
-                 joint-move-to={`${-deg90}, ${0}, ${0}, ${0}, ${0}, 0, 0`}
+                 ik-worker={`${0}, ${-deg22}, ${0}, ${0}, ${0}, 0, 0`}
+                 joint-move-to={`${0}, ${deg22}, ${0}, ${0}, ${0}, 0, 0`}
                  exact_solution_slrm="exact: false"
                  joint-desirable="gain: 0:20,1:20,3:40; upper: 0:0.382,1:-0.785,3:1.396; lower: 0:0.382,1:-0.785,3:0.0;"
                  joint-desirable-vlimit="all: 2.0"

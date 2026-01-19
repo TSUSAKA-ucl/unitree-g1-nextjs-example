@@ -1,17 +1,17 @@
 {
   "name": "next-js-sample",
-  "version": "0.1.0",
+  "version": "0.2.1",
   "private": true,
   "dependencies": {
     "aframe": "^1.7.1",
     "next": "16.1.1",
     "react": "19.2.3",
     "react-dom": "19.2.3",
-    "@ucl-nuee/robot-loader": "1.0.20",
-    "@ucl-nuee/ur5e": "1.0.3",
-    "@ucl-nuee/ik-cd-worker": "0.2.20",
-    "@ucl-nuee/g1-left": "1.0.2",
-    "@ucl-nuee/g1-right": "1.0.2"
+    "@ucl-nuee/robot-loader": "workspace:*",
+    "@ucl-nuee/ur5e": "workspace:*",
+    "@ucl-nuee/ik-cd-worker": "workspace:*",
+    "@ucl-nuee/g1-left": "workspace:*",
+    "@ucl-nuee/g1-right": "workspace:*"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
