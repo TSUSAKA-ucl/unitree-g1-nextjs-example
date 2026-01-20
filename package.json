@@ -1,5 +1,5 @@
 {
-  "name": "next-js-sample",
+  "name": "@ucl-nuee/unitree-g1-nextjs-example",
   "version": "0.2.1",
   "private": true,
   "dependencies": {

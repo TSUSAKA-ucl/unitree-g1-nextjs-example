@@ -52,6 +52,8 @@ function App() {
                ik-worker={`0, ${-deg90}, ${deg90}, 0, ${deg90}, 0`}
                exact_solution="exact: false"
                reflect-worker-joints
+               reflect-collision="color: orange"
+               reflect-joint-limits
                arm-motion-ui
                base-mover="velocityMax: 0.2; angularVelocityMax: 0.5"
                joint-desirable={`gain: 2:10; upper: 1:0,2:${deg80},3:0; lower: 1:${deg10},2:${deg10},3:0;`}
