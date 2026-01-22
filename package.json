@@ -1,7 +1,7 @@
 {
   "name": "@ucl-nuee/unitree-g1-nextjs-example",
-  "version": "0.2.1",
-  "private": true,
+  "version": "0.2.2",
+  "private": false,
   "dependencies": {
     "aframe": "^1.7.1",
     "next": "16.1.1",
