@@ -7,11 +7,11 @@
     "next": "16.1.1",
     "react": "19.2.3",
     "react-dom": "19.2.3",
-    "@ucl-nuee/robot-loader": "1.0.24",
-    "@ucl-nuee/ur5e": "1.0.3",
     "@ucl-nuee/g1-left": "1.0.2",
+    "@ucl-nuee/ik-cd-worker": "0.2.24",
+    "@ucl-nuee/ur5e": "1.0.3",
     "@ucl-nuee/g1-right": "1.0.2",
-    "@ucl-nuee/ik-cd-worker": "0.2.23"
+    "@ucl-nuee/robot-loader": "1.0.26"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
