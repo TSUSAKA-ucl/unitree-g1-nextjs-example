@@ -13,7 +13,7 @@ import '@ucl-nuee/robot-loader/vrControllerThumbMenu.js';
 import '@ucl-nuee/robot-loader/axesFrame.js';
 import '@ucl-nuee/robot-loader/attachToAnother.js';
 import '@ucl-nuee/robot-loader/baseMover.js';
-import './fingerCloser.js';
+import '@ucl-nuee/robot-loader/fingerCloser.js';
 
 function App() {
   const deg90 = Math.PI/2;
@@ -120,21 +120,21 @@ function App() {
           <a-circle id="g1lt-unitree-l-thumb"
                     robot-loader="model: g1-left-thumb"
                     attach-to-another="to: g1l-unitree-l-arm"
-                    finger-closer="stationaryJoints: 0; closeMax: 45"
+                    finger-closer="stationaryJoints: 0; closeMax: 45; closeEvent: xbuttondown; closeStopEvent: xbuttonup; openEvent: ybuttondown; openStopEvent: ybuttonup"
                     radius="0.03" color="blue"
                     material="opacity: 0.5; transparent: true;"
           />
           <a-circle id="g1li-unitree-l-index"
                     robot-loader="model: g1-left-index"
                     attach-to-another="to: g1l-unitree-l-arm"
-                    finger-closer="closeMax: -45"
+                    finger-closer="closeMax: -45; closeEvent: xbuttondown; closeStopEvent: xbuttonup; openEvent: ybuttondown; openStopEvent: ybuttonup"
                     radius="0.03" color="blue"
                     material="opacity: 0.5; transparent: true;"
           />
           <a-circle id="g1lm-unitree-l-middle"
                     robot-loader="model: g1-left-middle"
                     attach-to-another="to: g1l-unitree-l-arm"
-                    finger-closer="closeMax: -45"
+                    finger-closer="closeMax: -45; closeEvent: xbuttondown; closeStopEvent: xbuttonup; openEvent: ybuttondown; openStopEvent: ybuttonup"
                     radius="0.03" color="blue"
                     material="opacity: 0.5; transparent: true;"
           />
