@@ -76,26 +76,25 @@ function App() {
                  reflect-worker-joints
                  reflect-collision="color: yellow"
                  reflect-joint-limits
-                 attach-event-broadcaster
                  arm-motion-ui
         >
           <a-circle id="g1rt-unitree-r-thumb"
                     robot-loader="model: g1-right-thumb"
-                    attach-to-another="to: g1r-unitree-r-arm"
+                    attach-to-another="to: g1r-unitree-r-arm;event: a,b,x,y"
                     finger-closer="stationaryJoints: 0; closeMax: -45"
                     radius="0.03" color="blue"
                     material="opacity: 0.5; transparent: true;"
           />
           <a-circle id="g1ri-unitree-r-index"
                     robot-loader="model: g1-right-index"
-                    attach-to-another="to: g1r-unitree-r-arm"
+                    attach-to-another="to: g1r-unitree-r-arm;event: a,b,x,y"
                     finger-closer
                     radius="0.03" color="blue"
                     material="opacity: 0.5; transparent: true;"
           />
           <a-circle id="g1rm-unitree-r-middle"
                     robot-loader="model: g1-right-middle"
-                    attach-to-another="to: g1r-unitree-r-arm"
+                    attach-to-another="to: g1r-unitree-r-arm;event: a,b,x,y"
                     finger-closer
                     radius="0.03" color="blue"
                     material="opacity: 0.5; transparent: true;"
@@ -114,26 +113,25 @@ function App() {
                  reflect-worker-joints
                  reflect-collision="color: yellow"
                  reflect-joint-limits
-                 attach-event-broadcaster
                  arm-motion-ui
         >
           <a-circle id="g1lt-unitree-l-thumb"
                     robot-loader="model: g1-left-thumb"
-                    attach-to-another="to: g1l-unitree-l-arm"
+                    attach-to-another="to: g1l-unitree-l-arm;event: a,b,x,y"
                     finger-closer="stationaryJoints: 0; closeMax: 45; closeEvent: xbuttondown; closeStopEvent: xbuttonup; openEvent: ybuttondown; openStopEvent: ybuttonup"
                     radius="0.03" color="blue"
                     material="opacity: 0.5; transparent: true;"
           />
           <a-circle id="g1li-unitree-l-index"
                     robot-loader="model: g1-left-index"
-                    attach-to-another="to: g1l-unitree-l-arm"
+                    attach-to-another="to: g1l-unitree-l-arm;event: a,b,x,y"
                     finger-closer="closeMax: -45; closeEvent: xbuttondown; closeStopEvent: xbuttonup; openEvent: ybuttondown; openStopEvent: ybuttonup"
                     radius="0.03" color="blue"
                     material="opacity: 0.5; transparent: true;"
           />
           <a-circle id="g1lm-unitree-l-middle"
                     robot-loader="model: g1-left-middle"
-                    attach-to-another="to: g1l-unitree-l-arm"
+                    attach-to-another="to: g1l-unitree-l-arm;event: a,b,x,y"
                     finger-closer="closeMax: -45; closeEvent: xbuttondown; closeStopEvent: xbuttonup; openEvent: ybuttondown; openStopEvent: ybuttonup"
                     radius="0.03" color="blue"
                     material="opacity: 0.5; transparent: true;"
