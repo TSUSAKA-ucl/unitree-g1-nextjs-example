@@ -14,6 +14,7 @@ import '@ucl-nuee/robot-loader/axesFrame.js';
 import '@ucl-nuee/robot-loader/attachToAnother.js';
 import '@ucl-nuee/robot-loader/baseMover.js';
 import '@ucl-nuee/robot-loader/fingerCloser.js';
+import '@ucl-nuee/ik-cd-worker/IkWorkerParamsComponents.js';
 
 function toSchema (obj, separator='; ') {
   if (typeof obj !== 'object' || obj === null) {
@@ -73,6 +74,7 @@ function App() {
                reflect-worker-joints
                reflect-collision="color: orange"
                reflect-joint-limits
+               set-joint-limit-keep-moving="true"
                arm-motion-ui
                base-mover="velocityMax: 0.2; angularVelocityMax: 0.5"
                joint-desirable={toSchema({gain: {2:10},
@@ -98,6 +100,7 @@ function App() {
                  joint-desirable-vlimit="all: 2.0"
                  reflect-worker-joints
                  reflect-collision="color: yellow"
+                 set-joint-limit-keep-moving="true"
                  reflect-joint-limits
                  arm-motion-ui
                  set-end-effector-pose={
@@ -141,6 +144,7 @@ function App() {
                  joint-desirable-vlimit="all: 2.0"
                  reflect-worker-joints
                  reflect-collision="color: yellow"
+                 set-joint-limit-keep-moving="true"
                  reflect-joint-limits
                  arm-motion-ui
                  set-end-effector-pose={`position: 0.1 0.0 0.0`}
