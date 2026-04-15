@@ -1,6 +1,8 @@
 rapier-worker.mjs
 rapierObjectUtils.js
 ik_cd_worker.js
+ik-worker.js
+cd-worker.js
 wasm/cd_module.js
 wasm/cd_module.wasm
 wasm/slrm_module.js

@@ -14,6 +14,14 @@ import '@ucl-nuee/robot-loader/axesFrame.js';
 import '@ucl-nuee/robot-loader/attachToAnother.js';
 import '@ucl-nuee/robot-loader/baseMover.js';
 import '@ucl-nuee/robot-loader/fingerCloser.js';
+import '@ucl-nuee/robot-loader/ignoreCollision.js';
+
+AFRAME.registerSystem('cd-worker-system', {
+  schema: {},
+  init: function () {
+    this.store = {};
+  },
+});
 
 function toSchema (obj, separator='; ') {
   if (typeof obj !== 'object' || obj === null) {
@@ -125,63 +133,65 @@ function App() {
                     radius="0.03" color="blue"
                     material="opacity: 0.5; transparent: true;"
           />
-        </a-plane>
 
-        <a-plane id="g1l-unitree-l-arm"
-                 width="0.1" height="0.1" color="green"
-                 material="opacity: 0.5; transparent: true; side: double;"
-                 robot-loader="model: g1-left"
-                 ik-worker={`${-deg22}, ${deg45}, ${0}, ${0}, ${0}, 0, 0`}
-                 joint-move-to={`${0}, ${-deg22}, ${0}, ${0}, ${0}, 0, 0`}
-                 exact_solution="exact: false"
-                 joint-desirable={
-                   toSchema({gain: {0:20,1:20,3:40},
-                             upper: {0: -0.382,1: 0.785,3: 1.396},
-			     lower: {0: -0.382,1: 0.785,3: 0.0}})}
-                 joint-desirable-vlimit="all: 2.0"
-                 reflect-worker-joints
-                 reflect-collision="color: yellow"
-                 reflect-joint-limits
-                 arm-motion-ui
-                 set-end-effector-pose={`position: 0.1 0.0 0.0`}
-        >
-          <a-circle id="g1lt-unitree-l-thumb"
-                    robot-loader="model: g1-left-thumb"
-                    attach-to-another="to: g1l-unitree-l-arm;event: a,b,x,y"
-                    finger-closer={
-                      toSchema({stationaryJoints: 0,
-                                closeMax: 45,
-                                closeEvent: 'xbuttondown',
-                                closeStopEvent: 'xbuttonup',
-                                openEvent: 'ybuttondown',
-                                openStopEvent: 'ybuttonup'})}
-                    radius="0.03" color="blue"
-                    material="opacity: 0.5; transparent: true;"
-          />
-          <a-circle id="g1li-unitree-l-index"
-                    robot-loader="model: g1-left-index"
-                    attach-to-another="to: g1l-unitree-l-arm;event: a,b,x,y"
-                    finger-closer={
-                      toSchema({closeMax: -45,
-                                closeEvent: 'xbuttondown',
-				closeStopEvent: 'xbuttonup',
-				openEvent: 'ybuttondown',
-				openStopEvent: 'ybuttonup'})}
-                    radius="0.03" color="blue"
-                    material="opacity: 0.5; transparent: true;"
-          />
-          <a-circle id="g1lm-unitree-l-middle"
-                    robot-loader="model: g1-left-middle"
-                    attach-to-another="to: g1l-unitree-l-arm;event: a,b,x,y"
-                    finger-closer={
-                      toSchema({closeMax: -45,
-                                closeEvent: 'xbuttondown',
-                                closeStopEvent: 'xbuttonup',
-                                openEvent: 'ybuttondown',
-                                openStopEvent: 'ybuttonup'})}
-                    radius="0.03" color="blue"
-                    material="opacity: 0.5; transparent: true;"
-          />
+
+          <a-plane id="g1l-unitree-l-arm"
+                   width="0.1" height="0.1" color="green"
+                   material="opacity: 0.5; transparent: true; side: double;"
+                   robot-loader="model: g1-left"
+                   ik-worker={`${-deg22}, ${deg45}, ${0}, ${0}, ${0}, 0, 0`}
+                   joint-move-to={`${0}, ${-deg22}, ${0}, ${0}, ${0}, 0, 0`}
+                   exact_solution="exact: false"
+                   joint-desirable={
+                     toSchema({gain: {0:20,1:20,3:40},
+                               upper: {0: -0.382,1: 0.785,3: 1.396},
+			       lower: {0: -0.382,1: 0.785,3: 0.0}})}
+                   joint-desirable-vlimit="all: 2.0"
+                   ignore-collision="other:g1r-unitree-r-arm; data: 0/1, 0/0, 1/0"
+                   reflect-worker-joints
+                   reflect-collision="color: yellow"
+                   reflect-joint-limits
+                   arm-motion-ui
+                   set-end-effector-pose={`position: 0.1 0.0 0.0`}
+          >
+            <a-circle id="g1lt-unitree-l-thumb"
+                      robot-loader="model: g1-left-thumb"
+                      attach-to-another="to: g1l-unitree-l-arm;event: a,b,x,y"
+                      finger-closer={
+                        toSchema({stationaryJoints: 0,
+                                  closeMax: 45,
+                                  closeEvent: 'xbuttondown',
+                                  closeStopEvent: 'xbuttonup',
+                                  openEvent: 'ybuttondown',
+                                  openStopEvent: 'ybuttonup'})}
+                      radius="0.03" color="blue"
+                      material="opacity: 0.5; transparent: true;"
+            />
+            <a-circle id="g1li-unitree-l-index"
+                      robot-loader="model: g1-left-index"
+                      attach-to-another="to: g1l-unitree-l-arm;event: a,b,x,y"
+                      finger-closer={
+                        toSchema({closeMax: -45,
+                                  closeEvent: 'xbuttondown',
+				  closeStopEvent: 'xbuttonup',
+				  openEvent: 'ybuttondown',
+				  openStopEvent: 'ybuttonup'})}
+                      radius="0.03" color="blue"
+                      material="opacity: 0.5; transparent: true;"
+            />
+            <a-circle id="g1lm-unitree-l-middle"
+                      robot-loader="model: g1-left-middle"
+                      attach-to-another="to: g1l-unitree-l-arm;event: a,b,x,y"
+                      finger-closer={
+                        toSchema({closeMax: -45,
+                                  closeEvent: 'xbuttondown',
+                                  closeStopEvent: 'xbuttonup',
+                                  openEvent: 'ybuttondown',
+                                  openStopEvent: 'ybuttonup'})}
+                      radius="0.03" color="blue"
+                      material="opacity: 0.5; transparent: true;"
+            />
+          </a-plane>
         </a-plane>
       </a-plane>
     </a-scene>
