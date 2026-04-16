@@ -111,6 +111,7 @@ function App() {
                  set-end-effector-pose={
                    toSchema({position: [0.1, 0.0, 0.0],
                              quaternion: [0, 0, sin15, cos15]})}
+                 send-base-coord
         >
           <a-circle id="g1rt-unitree-r-thumb"
                     robot-loader="model: g1-right-thumb"
@@ -153,6 +154,7 @@ function App() {
                    reflect-joint-limits
                    arm-motion-ui
                    set-end-effector-pose={`position: 0.1 0.0 0.0`}
+                   send-base-coord
           >
             <a-circle id="g1lt-unitree-l-thumb"
                       robot-loader="model: g1-left-thumb"
