@@ -122,7 +122,7 @@ function App() {
                     ik-worker="0, 0"
                     finger-closer2
                     radius="0.003" color="gray"
-                    ignore-collision="other:g1r-unitree-r-arm; data: 0/7, 0/8, 1/7, 1/8"
+                    ignore-collision="other:g1rt-unitree-r-thumb; data: 0/0, 1/0"
                     reflect-collision="color: yellow"
           />
           <a-circle id="g1rm-unitree-r-middle"
@@ -131,11 +131,9 @@ function App() {
                     ik-worker="0, 0"
                     finger-closer2
                     radius="0.003" color="gray"
-                    ignore-collision="other:g1r-unitree-r-arm; data: 0/7, 0/8, 1/7, 1/8"
+                    ignore-collision="other:g1rt-unitree-r-thumb; data: 0/0, 1/0"
                     reflect-collision="color: yellow"
           />
-
-
         <a-plane id="g1l-unitree-l-arm"
                  width="0.1" height="0.1" color="green"
                  material="opacity: 0.5; transparent: true; side: double;"
@@ -172,34 +170,34 @@ function App() {
                     ignore-collision="other:g1l-unitree-l-arm; data: 0/7, 0/8, 1/7, 1/8"
                     reflect-collision="color: yellow"
           />
-          <a-circle id="g1li-unitree-l-index"
-                    robot-loader="model: g1-left-index"
-                    attach-to-another="to: g1l-unitree-l-arm;event: a,b,x,y"
-                    ik-worker="0, 0"
-                    finger-closer2={
-                      toSchema({closeMax: -45,
-                                closeEvent: 'xbuttondown',
-				closeStopEvent: 'xbuttonup',
-				openEvent: 'ybuttondown',
-				openStopEvent: 'ybuttonup'})}
-                    radius="0.003" color="gray"
-                    ignore-collision="other:g1l-unitree-l-arm; data: 0/7, 0/8, 1/7, 1/8"
-                    reflect-collision="color: yellow"
-          />
-          <a-circle id="g1lm-unitree-l-middle"
-                    robot-loader="model: g1-left-middle"
-                    attach-to-another="to: g1l-unitree-l-arm;event: a,b,x,y"
-                    ik-worker="0, 0"
-                    finger-closer2={
-                      toSchema({closeMax: -45,
-                                closeEvent: 'xbuttondown',
-                                closeStopEvent: 'xbuttonup',
-                                openEvent: 'ybuttondown',
-                                openStopEvent: 'ybuttonup'})}
-                    radius="0.003" color="gray"
-                    ignore-collision="other:g1l-unitree-l-arm; data: 0/7, 0/8, 1/7, 1/8"
-                    reflect-collision="color: yellow"
-          />
+            <a-circle id="g1li-unitree-l-index"
+                      robot-loader="model: g1-left-index"
+                      attach-to-another="to: g1l-unitree-l-arm;event: a,b,x,y"
+                      ik-worker="0, 0"
+                      finger-closer2={
+                        toSchema({closeMax: -45,
+                                  closeEvent: 'xbuttondown',
+				  closeStopEvent: 'xbuttonup',
+				  openEvent: 'ybuttondown',
+				  openStopEvent: 'ybuttonup'})}
+                      radius="0.003" color="gray"
+                      ignore-collision="other:g1lt-unitree-l-thumb; data: 0/0, 1/0"
+                      reflect-collision="color: yellow"
+            />
+            <a-circle id="g1lm-unitree-l-middle"
+                      robot-loader="model: g1-left-middle"
+                      attach-to-another="to: g1l-unitree-l-arm;event: a,b,x,y"
+                      ik-worker="0, 0"
+                      finger-closer2={
+                        toSchema({closeMax: -45,
+                                  closeEvent: 'xbuttondown',
+                                  closeStopEvent: 'xbuttonup',
+                                  openEvent: 'ybuttondown',
+                                  openStopEvent: 'ybuttonup'})}
+                      radius="0.003" color="gray"
+                      ignore-collision="other:g1lt-unitree-l-thumb; data: 0/0, 1/0"
+                      reflect-collision="color: yellow"
+            />
         </a-plane>
         </a-plane>
       </a-box>
