@@ -1,17 +1,17 @@
 {
   "name": "@ucl-nuee/unitree-g1-nextjs-example",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "private": false,
   "dependencies": {
+    "@ucl-nuee/g1-left": "workspace:*",
+    "@ucl-nuee/g1-right": "workspace:*",
+    "@ucl-nuee/ik-cd-worker": "workspace:*",
+    "@ucl-nuee/robot-loader": "workspace:*",
+    "@ucl-nuee/ur5e": "workspace:*",
     "aframe": "^1.7.1",
     "next": "16.1.1",
     "react": "19.2.3",
-    "react-dom": "19.2.3",
-    "@ucl-nuee/g1-left": "1.2.0",
-    "@ucl-nuee/ik-cd-worker": "1.0.2",
-    "@ucl-nuee/g1-right": "1.2.0",
-    "@ucl-nuee/robot-loader": "1.2.1",
-    "@ucl-nuee/ur5e": "1.0.4"
+    "react-dom": "19.2.3"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
