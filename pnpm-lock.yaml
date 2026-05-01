@@ -8,15 +8,21 @@ importers:
 
   .:
     dependencies:
+      '@ucl-nuee/g1-left':
+        specifier: 1.2.1
+        version: 1.2.1
+      '@ucl-nuee/g1-right':
+        specifier: 1.2.1
+        version: 1.2.1
       '@ucl-nuee/ik-cd-worker':
-        specifier: ^0.2.19
-        version: 0.2.19(@msgpack/msgpack@3.1.3)(aframe@1.7.1)
+        specifier: 1.0.3
+        version: 1.0.3(@msgpack/msgpack@3.1.3)(aframe@1.7.1)
       '@ucl-nuee/robot-loader':
-        specifier: ^1.0.18
-        version: 1.0.18(@msgpack/msgpack@3.1.3)(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3)
+        specifier: 1.2.1
+        version: 1.2.1(@ucl-nuee/ik-cd-worker@1.0.3(@msgpack/msgpack@3.1.3)(aframe@1.7.1))(aframe@1.7.1)(eslint@9.39.2(jiti@2.6.1))(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(typescript@5.9.3)
       '@ucl-nuee/ur5e':
-        specifier: ^1.0.3
-        version: 1.0.3
+        specifier: 1.0.4
+        version: 1.0.4
       aframe:
         specifier: ^1.7.1
         version: 1.7.1
@@ -631,19 +637,30 @@ packages:
     resolution: {integrity: sha512-ink3/Zofus34nmBsPjow63FP5M7IGff0RKAgqR6+CFpdk22M7aLwC9gOcLGYqr7MczLPzZVERW9hRog3O4n1sQ==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  '@ucl-nuee/ik-cd-worker@0.2.19':
-    resolution: {integrity: sha512-vfegHHskNpfX0qb/wJUqlMIeAgbYz2zYJFi0RLGJmY6TN/1WomYZsT9z/D5bcHM9mikSFyYdX7U5YFschxnGNw==, tarball: https://npm.pkg.github.com/download/@ucl-nuee/ik-cd-worker/0.2.19/906d9a280bd48460772bb6900ec901f46aa4d056}
+  '@ucl-nuee/g1-left@1.2.1':
+    resolution: {integrity: sha512-LEzvm+sKmc2MqD570XpJtF4U68nSakjwxR24fdmZCS92AfCJ4dvAhloOtE5alr7mwM3h/K0kw1SL9gC8Z7LTgA==, tarball: https://npm.pkg.github.com/download/@ucl-nuee/g1-left/1.2.1/b3d2e702c54c9ef68439db7d6818c2cd21b4477e}
+
+  '@ucl-nuee/g1-right@1.2.1':
+    resolution: {integrity: sha512-LsNs8NNeZHg37eo0w0PS6fdwmlyVdbHB40hIkIXSD5W8hKvYaTrjO/2YWbEfatg0hIK5kwkpRuUIjmQGy0tMGw==, tarball: https://npm.pkg.github.com/download/@ucl-nuee/g1-right/1.2.1/98db04273c5b9199b5cada5d31a7a8dc5b2accfb}
+
+  '@ucl-nuee/ik-cd-worker@1.0.3':
+    resolution: {integrity: sha512-hNnpO+5O0puUobMsRyDvR1hvzAB768iBLk1cBk1DEIJ6qyPecWGaw9xB37nmwSkKd/PXD/3D0AuHlVnUYoK8XA==, tarball: https://npm.pkg.github.com/download/@ucl-nuee/ik-cd-worker/1.0.3/5bb9f5a79c1abe32f46137c0cf3d437bc6bd5120}
     hasBin: true
     peerDependencies:
       '@msgpack/msgpack': ^3.1.2
       aframe: ^1.7.1
 
-  '@ucl-nuee/robot-loader@1.0.18':
-    resolution: {integrity: sha512-dZQn8hJHRsSVs4f3hTnXdEUKfC5fa1L9TpJ4AIzYaTF935tgj1EG/6PEc505aad+Pn0+GMs/9TFD56ZeX7zVIQ==, tarball: https://npm.pkg.github.com/download/@ucl-nuee/robot-loader/1.0.18/686c824b83ff0d40e9c06059a2ef6f142de5cb33}
+  '@ucl-nuee/robot-loader@1.2.1':
+    resolution: {integrity: sha512-rmb2W6G1Gt9EZIw7yxppsUY4TjxtiBVOMS0mhfjLCQQq5GYxaWaPuPPdZv9eJMu8xGVn8nyjUilvF/6FqfqsVg==, tarball: https://npm.pkg.github.com/download/@ucl-nuee/robot-loader/1.2.1/bde29eda87ea8f5c4b683b29031e0f23db0ce305}
     hasBin: true
+    peerDependencies:
+      '@ucl-nuee/ik-cd-worker': 1.0.2
+      aframe: ^1.7.1
+      react: ^19.1.1
+      react-dom: ^19.1.1
 
-  '@ucl-nuee/ur5e@1.0.3':
-    resolution: {integrity: sha512-wNSgnjxc4gGLX4H7xWQ1KuvXLlah47xrkFqflJT0QnhYGYa69Jrca19ArQORCrkApErM6IlcRWEiJtDNgldYNg==, tarball: https://npm.pkg.github.com/download/@ucl-nuee/ur5e/1.0.3/92066dc5b27ddbf85652e752b9d38f0d72e323f4}
+  '@ucl-nuee/ur5e@1.0.4':
+    resolution: {integrity: sha512-Xj9PCsJAa5w3ndeTDKV3cWhlBmNTL86ytjYLZX+LPKcy89DNL/4CcxtBrJa3FXsl1x/CuI1kxKPXQsTmYptkVQ==, tarball: https://npm.pkg.github.com/download/@ucl-nuee/ur5e/1.0.4/a47fe10b7ac627188859cbf3db5b7dc1dec4601c}
 
   '@unrs/resolver-binding-android-arm-eabi@1.11.1':
     resolution: {integrity: sha512-ppLRUgHVaGRWUx0R0Ut06Mjo9gBaBkg3v/8AxusGLhsIotbBLuRk51rAzqLC8gq6NyyAojEXglNjzf6R948DNw==}
@@ -1415,7 +1432,7 @@ packages:
 
   glob@7.2.3:
     resolution: {integrity: sha512-nFR0zLpU2YCaRxwoCJvL6UvCH2JFyFVIvwTLsIf21AuHlMskA1hhTdk+LlYJtOlYt9v6dvszD2BGRqBL+iQK9Q==}
-    deprecated: Glob versions prior to v9 are no longer supported
+    deprecated: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
 
   global@4.4.0:
     resolution: {integrity: sha512-wv/LAoHdRE3BeTGz53FAamhGlPLhlssK45usmGFThIi4XqnBmjKQ16u+RNbP7WvigRZDxUsM0J3gcQ5yicaL0w==}
@@ -3104,26 +3121,29 @@ snapshots:
       '@typescript-eslint/types': 8.52.0
       eslint-visitor-keys: 4.2.1
 
-  '@ucl-nuee/ik-cd-worker@0.2.19(@msgpack/msgpack@3.1.3)(aframe@1.7.1)':
+  '@ucl-nuee/g1-left@1.2.1': {}
+
+  '@ucl-nuee/g1-right@1.2.1': {}
+
+  '@ucl-nuee/ik-cd-worker@1.0.3(@msgpack/msgpack@3.1.3)(aframe@1.7.1)':
     dependencies:
       '@msgpack/msgpack': 3.1.3
       aframe: 1.7.1
 
-  '@ucl-nuee/robot-loader@1.0.18(@msgpack/msgpack@3.1.3)(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3)':
+  '@ucl-nuee/robot-loader@1.2.1(@ucl-nuee/ik-cd-worker@1.0.3(@msgpack/msgpack@3.1.3)(aframe@1.7.1))(aframe@1.7.1)(eslint@9.39.2(jiti@2.6.1))(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(typescript@5.9.3)':
     dependencies:
-      '@ucl-nuee/ik-cd-worker': 0.2.19(@msgpack/msgpack@3.1.3)(aframe@1.7.1)
+      '@ucl-nuee/ik-cd-worker': 1.0.3(@msgpack/msgpack@3.1.3)(aframe@1.7.1)
       aframe: 1.7.1
       eslint-plugin-react: 7.37.5(eslint@9.39.2(jiti@2.6.1))
       madge: 8.0.0(typescript@5.9.3)
       react: 19.2.3
       react-dom: 19.2.3(react@19.2.3)
     transitivePeerDependencies:
-      - '@msgpack/msgpack'
       - eslint
       - supports-color
       - typescript
 
-  '@ucl-nuee/ur5e@1.0.3': {}
+  '@ucl-nuee/ur5e@1.0.4': {}
 
   '@unrs/resolver-binding-android-arm-eabi@1.11.1':
     optional: true
