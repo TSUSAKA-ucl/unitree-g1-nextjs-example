@@ -1,6 +1,6 @@
 {
   "name": "@ucl-nuee/unitree-g1-nextjs-example",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "private": false,
   "dependencies": {
     "@ucl-nuee/g1-left": "workspace:*",

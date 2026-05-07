@@ -3,6 +3,7 @@ import * as React from 'react';
 import AFRAME from 'aframe';
 import '@ucl-nuee/robot-loader/robotRegistry.js';
 import '@ucl-nuee/robot-loader/robotLoader.js';
+import '@ucl-nuee/robot-loader/stillObjects.js';
 import '@ucl-nuee/robot-loader/ikWorker.js';
 import '@ucl-nuee/robot-loader/jointMoveTo.js';
 import '@ucl-nuee/robot-loader/reflectWorkerJoints.js';
@@ -51,6 +52,7 @@ function App() {
   return (
     <a-scene xr-mode-ui="XRMode: xr"
       cd-worker-log-timing="timing: true"
+      cd-worker-log-collision="logCollision: true"
     >
       <a-entity camera position="-0.5 1.2 1.2"
       		wasd-controls="acceleration: 20; fly: true"
@@ -93,7 +95,7 @@ function App() {
       />
       <a-box id="unitree-g1-torso"
              position="0 0 -0.5" rotation="-90 0 90"
-             width="0.4" height="0.4" depth="0.1" color="red"
+             width="0.1" height="0.1" depth="0.005" color="red"
              base-mover="velocityMax: 0.2; angularVelocityMax: 0.5"
       >
         <a-plane id="g1r-unitree-r-arm"
@@ -101,13 +103,14 @@ function App() {
                  material="opacity: 0.5; transparent: true; side: double;"
                  robot-loader="model: g1-right"
                  ik-worker={`${0}, ${-deg22}, ${0}, ${0}, ${0}, 0, 0`}
-                 joint-move-to={`${0}, ${deg22}, ${0}, ${0}, ${0}, 0, 0`}
+                 /* joint-move-to={`${0}, ${deg22}, ${0}, ${0}, ${0}, 0, 0`} */
                  exact_solution_slrm="exact: false"
                  joint-desirable={toSchema({gain: {0:20,1:20,3:40},
                                             upper: {0:0.382,1:-0.785,3:1.396},
 				            lower: {0:0.382,1:-0.785,3:0.0}})}
                  joint-desirable-vlimit="all: 2.0"
                  reflect-collision="color: yellow"
+                 ignore-collision="other:ur5e; data: 0/0, 1/0, 0/1"
                  set-joint-limit-keep-moving="true"
                  reflect-joint-limits
                  arm-motion-ui
@@ -150,14 +153,15 @@ function App() {
                  material="opacity: 0.5; transparent: true; side: double;"
                  robot-loader="model: g1-left"
                  ik-worker={`${-deg22}, ${deg45}, ${0}, ${0}, ${0}, 0, 0`}
-                 joint-move-to={`${0}, ${-deg22}, ${0}, ${0}, ${0}, 0, 0`}
+                 /* joint-move-to={`${0}, ${-deg22}, ${0}, ${0}, ${0}, 0, 0`} */
                  exact_solution="exact: false"
                  joint-desirable={
                    toSchema({gain: {0:20,1:20,3:40},
                              upper: {0: -0.382,1: 0.785,3: 1.396},
 			     lower: {0: -0.382,1: 0.785,3: 0.0}})}
                  joint-desirable-vlimit="all: 2.0"
-                 ignore-collision="other:g1r-unitree-r-arm; data: 0/1, 0/0, 1/0"
+                 ignore-collision__a="other:g1r-unitree-r-arm; data: 0/1, 0/0, 1/0"
+                 ignore-collision__b="other:ur5e; data: 0/0, 1/0, 0/1"
                  reflect-collision="color: yellow"
                  set-joint-limit-keep-moving="true"
                  reflect-joint-limits
@@ -213,6 +217,15 @@ function App() {
         </a-plane>
         </a-plane>
       </a-box>
+      <a-entity id="table1"
+               position="-1.0 0.0 -0.5" rotation="-90 0 -90"
+               still-objects="model: table"
+               ik-worker
+               ignore-collision__u="other:ur5e; data: 0/0"
+               ignore-collision__r="other:g1r-unitree-r-arm; data: 0/0"
+               ignore-collision__l="other:g1l-unitree-l-arm; data: 0/0"
+      >
+      </a-entity>
     </a-scene>
   );
 }

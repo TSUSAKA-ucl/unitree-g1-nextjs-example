@@ -45,3 +45,5 @@ public/ik_cd_worker.js
 public/wasm
 public/ur5e
 next-js-sample-*.tgz
+
+**.ORIG
