@@ -41,11 +41,11 @@ function App() {
   const cos15 = Math.cos(Math.PI/12);
   const menuSchemaR = toSchema({items: ['g1r-unitree-r-arm',
                                         'ur5e',
-                                        'g1r-unitree-r-arm',
+                                        'g1l-unitree-l-arm',
                                         'ray'],
                                 laser: false});
-  const menuSchemaL = toSchema({items: ['g1r-unitree-l-arm',
-                                        'g1l-unitree-l-arm',
+  const menuSchemaL = toSchema({items: ['g1r-unitree-r-arm',
+                                        'ur5e',
                                         'g1l-unitree-l-arm',
                                         'ray'],
                                 laser: false});
@@ -127,7 +127,7 @@ function App() {
                     joint-move-to="0, -0.79, -0.79"
                     finger-closer2="stationaryJoints: 0; closeMax: -45"
                     radius="0.003" color="gray"
-                    ignore-collision="other:g1r-unitree-r-arm; data: 0/7, 0/8, 1/7, 1/8"
+                    ignore-collision="other:g1r-unitree-r-arm; data: 0/6, 0/7, 0/8, 1/7, 1/8"
                     reflect-collision="color: yellow"
           />
           <a-circle id="g1ri-unitree-r-index"
@@ -136,7 +136,8 @@ function App() {
                     ik-worker="0, 0"
                     finger-closer2
                     radius="0.003" color="gray"
-                    ignore-collision="other:g1rt-unitree-r-thumb; data: 0/0, 1/0"
+                    ignore-collision__a="other:g1r-unitree-r-arm; data: 0/6, 0/7, 0/8"
+                    ignore-collision__t="other:g1rt-unitree-r-thumb; data: 0/0, 1/0"
                     reflect-collision="color: yellow"
           />
           <a-circle id="g1rm-unitree-r-middle"
@@ -145,7 +146,8 @@ function App() {
                     ik-worker="0, 0"
                     finger-closer2
                     radius="0.003" color="gray"
-                    ignore-collision="other:g1rt-unitree-r-thumb; data: 0/0, 1/0"
+                    ignore-collision__a="other:g1r-unitree-r-arm; data: 0/6, 0/7, 0/8"
+                    ignore-collision__t="other:g1rt-unitree-r-thumb; data: 0/0, 1/0"
                     reflect-collision="color: yellow"
           />
         <a-plane id="g1l-unitree-l-arm"
@@ -160,8 +162,8 @@ function App() {
                              upper: {0: -0.382,1: 0.785,3: 1.396},
 			     lower: {0: -0.382,1: 0.785,3: 0.0}})}
                  joint-desirable-vlimit="all: 2.0"
-                 ignore-collision__a="other:g1r-unitree-r-arm; data: 0/1, 0/0, 1/0"
-                 ignore-collision__b="other:ur5e; data: 0/0, 1/0, 0/1"
+                 ignore-collision___a="other:g1r-unitree-r-arm; data: 0/1, 0/0, 1/0"
+                 /* ignore-collision___b="other:ur5e; data: 0/0, 1/0, 0/1" */
                  reflect-collision="color: yellow"
                  set-joint-limit-keep-moving="true"
                  reflect-joint-limits
@@ -183,7 +185,7 @@ function App() {
                                 openEvent: 'ybuttondown',
                                 openStopEvent: 'ybuttonup'})}
                     radius="0.003" color="gray"
-                    ignore-collision="other:g1l-unitree-l-arm; data: 0/7, 0/8, 1/7, 1/8"
+                    ignore-collision="other:g1l-unitree-l-arm; data: 0/6, 0/7, 0/8, 1/7, 1/8"
                     reflect-collision="color: yellow"
           />
             <a-circle id="g1li-unitree-l-index"
@@ -197,7 +199,8 @@ function App() {
 				  openEvent: 'ybuttondown',
 				  openStopEvent: 'ybuttonup'})}
                       radius="0.003" color="gray"
-                      ignore-collision="other:g1lt-unitree-l-thumb; data: 0/0, 1/0"
+                      ignore-collision__a="other:g1l-unitree-l-arm; data: 0/6, 0/7, 0/8"
+                      ignore-collision__t="other:g1lt-unitree-l-thumb; data: 0/0, 1/0"
                       reflect-collision="color: yellow"
             />
             <a-circle id="g1lm-unitree-l-middle"
@@ -211,7 +214,8 @@ function App() {
                                   openEvent: 'ybuttondown',
                                   openStopEvent: 'ybuttonup'})}
                       radius="0.003" color="gray"
-                      ignore-collision="other:g1lt-unitree-l-thumb; data: 0/0, 1/0"
+                      ignore-collision__a="other:g1l-unitree-l-arm; data: 0/6, 0/7, 0/8"
+                      ignore-collision__t="other:g1lt-unitree-l-thumb; data: 0/0, 1/0"
                       reflect-collision="color: yellow"
             />
         </a-plane>
